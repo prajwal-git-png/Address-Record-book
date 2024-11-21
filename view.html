@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Contacts - Address Book</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">Address Book</h1>
+            <nav class="nav-buttons">
+                <a href="index.html" class="primary-button">Home</a>
+                <a href="add.html" class="secondary-button">Add Contact</a>
+                <a href="view.html" class="secondary-button">View Contacts</a>
+            </nav>
+        </header>
+
+        <!-- Main Section -->
+        <main class="container">
+            <section class="contacts-section">
+                <h2>Contact List</h2>
+                
+                <!-- Search and Sort Controls -->
+                <div class="controls">
+                    <div class="search-box">
+                        <input type="search" id="searchContacts" placeholder="Search contacts...">
+                        <button class="search-button">Search</button>
+                    </div>
+                    <div class="sort-controls">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy">
+                            <option value="name">Name</option>
+                            <option value="date">Date Added</option>
+                            <option value="email">Email</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Contacts List -->
+                <div class="contacts-list" id="contactsList">
+                    <!-- Contact cards will be dynamically inserted here -->
+                </div>
+
+                <!-- Contact Details Modal -->
+                <div id="contactModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>Contact Details</h2>
+                        <div id="contactDetails">
+                            <!-- Contact details will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Manage your contacts efficiently with Address Book</p>
+                <div class="copyright">
+                    &copy; 2024 Address Book. All rights reserved. Made with <span>♥</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html> 

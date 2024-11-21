@@ -1,0 +1,424 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2d2d2d;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 35px;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #00AAFF;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Form Styles (for add.html) */
+.form-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #2d2d2d;
+    border-radius: 35px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.5s ease-out;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #00AAFF;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 2px solid #404040;
+    border-radius: 35px;
+    background: #333333;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00AAFF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
+}
+
+/* Textarea Styles */
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid #404040;
+    border-radius: 35px;
+    background: #333333;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.form-group textarea:focus {
+    border-color: #00AAFF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
+}
+
+.form-group textarea::placeholder {
+    color: #666666;
+}
+
+/* Scrollbar for Textarea */
+.form-group textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-group textarea::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 35px;
+}
+
+.form-group textarea::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 35px;
+}
+
+.form-group textarea::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* Contacts Grid (for view.html) */
+.contacts-section {
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.controls {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 35px;
+}
+
+.search-box {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 3rem;
+    border: 2px solid #404040;
+    border-radius: 35px;
+    background: #333333;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.search-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #00AAFF;
+    cursor: pointer;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #2d2d2d;
+    border-radius: 35px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #00AAFF;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card:hover::before {
+    transform: scaleY(1);
+}
+
+.contact-info h3 {
+    color: #00AAFF;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #404040;
+}
+
+/* Button Styles */
+.primary-button, .secondary-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 35px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.primary-button {
+    background: #00AAFF;
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+}
+
+.secondary-button {
+    background: transparent;
+    color: #00AAFF;
+    border: 2px solid #00AAFF;
+}
+
+.secondary-button:hover {
+    background: rgba(0, 170, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .nav-buttons {
+        margin-top: 1rem;
+    }
+
+    .form-section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+}
+
+/* Dark Mode Enhancements */
+::placeholder {
+    color: #666666;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 35px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a;
+}
+
+/* Remove underline from nav links */
+.nav-buttons a {
+    text-decoration: none;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 35px;
+    background: #1E1E1E;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification.success {
+    border-left: 4px solid #00AAFF;
+}
+
+.notification.error {
+    border-left: 4px solid #FF4444;
+}
+
+.notification-message {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.notification-close:hover {
+    color: #FFFFFF;
+}
+
+/* Success Animation */
+.notification.success .notification-message::before {
+    content: '✓';
+    color: #00AAFF;
+    margin-right: 8px;
+}
+
+/* Error Animation */
+.notification.error .notification-message::before {
+    content: '✕';
+    color: #FF4444;
+    margin-right: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(120%);
+    }
+} 
